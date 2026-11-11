@@ -1,2 +1,2 @@
 print("Hello requirements class!!!")
-print("Y")
+print("X and Y")
