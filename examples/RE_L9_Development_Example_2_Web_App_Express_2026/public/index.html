@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Expense Tracker · TypeScript + Express</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/client.js" defer></script>
+</head>
+<body>
+  <div class="page">
+    <header class="topbar">
+      <div class="brand"><span class="logo">E<span>●</span></span> Expense <b>Tracker</b></div>
+      <span class="label-top">TYPESCRIPT + EXPRESS / TEACHING DEMO</span>
+    </header>
+
+    <section class="intro">
+      <span class="eyebrow">A SMALL FULL-STACK APPLICATION</span>
+      <h1>Expenses, clearly.</h1>
+      <p>A small full-stack application: TypeScript domain model, Express API, and a browser client.</p>
+    </section>
+
+    <section class="stats" aria-label="Summary">
+      <div class="stat"><span>Expenses</span><strong id="count">—</strong><small>Tracked items</small></div>
+      <div class="stat"><span>Total spent</span><strong id="total">—</strong><small>Including tips</small></div>
+      <div class="stat"><span>Tips</span><strong id="tips">—</strong><small>Included in total</small></div>
+    </section>
+
+    <main class="columns">
+      <section class="card entry">
+        <h2>Add an expense</h2>
+        <p class="muted">Enter the details and save.</p>
+        <form id="expense-form">
+          <label for="name">Description</label>
+          <input id="name" name="name" placeholder="e.g. Customer lunch" maxlength="80" required>
+
+          <div class="row-fields">
+            <div><label for="amount">Amount (CHF)</label><input id="amount" name="amount" type="number" min="0.01" step="0.01" placeholder="0.00" required></div>
+            <div><label for="tip">Tip (CHF)</label><input id="tip" name="tip" type="number" min="0" step="0.01" placeholder="0.00"></div>
+          </div>
+
+          <label for="category">Category</label>
+          <select id="category" name="category">
+            <option>Food</option><option>Travel</option><option>Office</option><option>Other</option>
+          </select>
+
+          <label for="kind">Type</label>
+          <select id="kind" name="kind">
+            <option value="consumer">Consumer expense</option>
+            <option value="business">Business expense</option>
+          </select>
+          <div id="trip-field" hidden>
+            <label for="trip-id">Business trip ID</label>
+            <input id="trip-id" name="tripId" type="number" step="1" min="1" placeholder="e.g. 2042">
+          </div>
+          <button class="primary" type="submit">Add expense <span>↗</span></button>
+          <p id="message" role="status" aria-live="polite" class="feedback"></p>
+        </form>
+      </section>
+
+      <section class="card expenses">
+        <div class="card-head">
+          <div><h2>All expenses</h2><p class="muted">Data retrieved from the server.</p></div>
+          <span class="badge"><i></i> Local demo</span>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr>
+              <th>Expense</th><th>Type</th><th class="right">Base</th><th class="right">Tip</th><th class="right">Total</th><th>Actions</th>
+            </tr></thead>
+            <tbody id="rows"></tbody>
+          </table>
+        </div>
+        <p class="footnote">Expenses are stored locally in <code>data/expenses.json</code> and survive server restarts.</p>
+      </section>
+    </main>
+    <footer>Based on the lecture's <code>IExpense</code>, <code>Expense</code>, <code>BusinessExpense</code>, <code>ConsumerExpense</code> and <code>AccountExpenses</code>.</footer>
+  </div>
+</body>
+</html>

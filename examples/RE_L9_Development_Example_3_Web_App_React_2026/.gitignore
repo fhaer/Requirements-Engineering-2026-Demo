@@ -1,0 +1,7 @@
+node_modules/
+dist/
+dist-check/
+web/dist/
+data/expenses.json
+*.log
+.DS_Store

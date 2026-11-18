@@ -1,0 +1,1 @@
+{"version":3,"file":"business_expense.js","sourceRoot":"","sources":["business_expense.ts"],"names":[],"mappings":";;;AAAA,uCAAoC;AAEpC,qBAA6B,SAAQ,iBAAO;IACxC,MAAM,CAAS;IACf,YAAY,EAAW;QACnB,KAAK,EAAE,CAAC;QACR,IAAI,CAAC,MAAM,GAAG,EAAE,CAAC;IACrB,CAAC;IACD,eAAe,CAAC,MAAe;QAC3B,IAAI,CAAC,MAAM,GAAG,MAAM,CAAC;IACzB,CAAC;CACJ"}
